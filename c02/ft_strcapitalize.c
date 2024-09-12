@@ -6,7 +6,7 @@
 /*   By: k-maru <scribearm@gmail.com>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/11 21:12:08 by k-maru            #+#    #+#             */
-/*   Updated: 2024/09/11 22:34:01 by k-maru           ###   ########.fr       */
+/*   Updated: 2024/09/12 12:37:34 by k-maru           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 char	*ft_strcapitalize(char *str);
 char	*ft_strcpy(char *dest, char *src);
+int	is_alphanum(char c);
 
 int	main(void)
 {
@@ -40,14 +41,24 @@ char	*ft_strcapitalize(char *str)
 		if (str[i] >= 'A' && str[i] <= 'Z')
 			str[i] += 32;
 
-	i = -1;
+	i = 0;
+	if (str[i] >= 'a' && str[i] <= 'z')
+		str[i] -= 32;
 	while (str[++i])
-		if (str[i] >= 'a' && str[i] <= 'z'
-		&& !(str[i - 1] >= '0' && str[i - 1] <= '9')
-		&& !(str[i - 1] >= 'A' && str[i - 1] <= 'Z'))
+		if ((str[i] >= 'a' && str[i] <= 'z') 
+		&&  !(is_alphanum(str[i - 1])))
 			str[i] -= 32;
 
 	return (str);
+}
+
+int	is_alphanum(char c)
+{
+	if ((c >= '0' && c <= '9')
+	||  (c >= 'A' && c <= 'Z')
+	||  (c >= 'a' && c <= 'z'))
+		return (1);
+	return (0);
 }
 
 char	*ft_strcpy(char *dest, char *src)
