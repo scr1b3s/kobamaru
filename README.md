@@ -123,5 +123,5 @@ Nós temos outros vários programas que fazem coisas parecidas, e eu os introduz
 Agora, usamos o `-Werror` justamente porque assim tornamos **qualquer aviso que as outras flags nos dêem em um erro de compilação, porque eles simbolizam falhas lógicas/de implementação na construção do nosso código.**
 
 **Referências:**
-[CPP/C++ Compiler Flags and Options - caiorss](https://caiorss.github.io/C-Cpp-Notes/compiler-flags-options.html): Sobre Flags e Compilação.
-[Compiler Options Hardening Guide for C and C++ - Open Source Security Foundation (OpenSSF)](https://best.openssf.org/Compiler-Hardening-Guides/Compiler-Options-Hardening-Guide-for-C-and-C++.html): Sobre Compilação, o que Hardening no contexto de Compilação Significa... E algumas coisas que eu não lembro agora.
+- [CPP/C++ Compiler Flags and Options - caiorss](https://caiorss.github.io/C-Cpp-Notes/compiler-flags-options.html) - Sobre Flags e Compilação.
+- [Compiler Options Hardening Guide for C and C++ - Open Source Security Foundation (OpenSSF)](https://best.openssf.org/Compiler-Hardening-Guides/Compiler-Options-Hardening-Guide-for-C-and-C++.html) - Sobre Compilação, o que Hardening no contexto de Compilação Significa... E algumas coisas que eu não lembro agora.
