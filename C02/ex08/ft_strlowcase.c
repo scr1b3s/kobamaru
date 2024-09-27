@@ -6,18 +6,18 @@
 /*   By: k-maru <scribearm@gmail.com>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/11 20:59:27 by k-maru            #+#    #+#             */
-/*   Updated: 2024/09/11 21:10:32 by k-maru           ###   ########.fr       */
+/*   Updated: 2024/09/18 21:05:08 by k-maru           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*strlowcase(char *str)
+char	*ft_strlowcase(char *str)
 {
 	int	i;
 
 	i = -1;
 	while (str[++i])
-		if (str[i] >= 'a' && str[i] <= 'z')
-			str[i] -= 32;
+		if (str[i] >= 'A' && str[i] <= 'Z')
+			str[i] += 32;
 
 	return (str);
 }

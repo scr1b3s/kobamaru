@@ -6,7 +6,7 @@
 /*   By: k-maru <scribearm@gmail.com>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/11 21:12:08 by k-maru            #+#    #+#             */
-/*   Updated: 2024/09/12 12:37:34 by k-maru           ###   ########.fr       */
+/*   Updated: 2024/09/18 21:05:42 by k-maru           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,21 +16,6 @@
 char	*ft_strcapitalize(char *str);
 char	*ft_strcpy(char *dest, char *src);
 int	is_alphanum(char c);
-
-int	main(void)
-{
-
-	char	*t = (char *)malloc(150 * sizeof(char));
-	ft_strcpy(t, "sAlut, coMMent tu vAs ? 42mOts quarAAnte-deux; cinquante+et+un");
-
-	printf("%s.\n", t);
-	
-	ft_strcapitalize(t);
-
-	printf("%s.\n", t);
-
-	return (0);
-}
 
 char	*ft_strcapitalize(char *str)
 {
