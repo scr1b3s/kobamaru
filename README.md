@@ -39,7 +39,7 @@ Desse jeito, não haverão surpresas desagradáveis e você não vai precisar ar
 
 ### Os exercícios são distribuídos cuidadosamente levando em consideração ordem de dificuldade. Não consideraremos um exercício difícil realizado corretamente se um fácil não for funcional
 
-Isso é só verdade: Os exercícios são do mais fácil para o mais difícil, e as listas que você recebe durante a Piscine são temáticas, cada uma segue um conjunto de premissas que deve ser corretamente assimililada e aplicada... Mas **nem todo exercício é criado da mesma forma.**
+Isso é só verdade: Os exercícios são do mais fácil para o mais difícil, e as listas que você recebe durante a Piscine são temáticas, cada uma segue um conjunto de premissas que deve ser corretamente assimilada e aplicada... Mas **nem todo exercício é criado da mesma forma.**
 
 O que isso quer dizer: Nem todo exercício precisa ser feito, nem toda Lista precisa ser concluída em sua completude. Esse é um aviso: eu não vou fazer todos os exercícios, você está formalmente convidado a submeter seu código **junto com os testes que o validem** para este repositório a partir de um Pull Request, já que eu me recuso a fazer certos exercícios por questões de princípios (eu não sei fazer).
 
@@ -49,5 +49,79 @@ Essa instrução é especialmente importante, mas você não sabe disso ainda: P
 
 Existem diferenças teóricas/conceituais entre Programas e Funções, isso será melhor explorado ao longo das disposições das Listas, mas... Leve isso em consideração.
 
-### Seu código será complicado utilizando as flags: -Wall -Wextra -Werror usando cc.
+### Seu código será complicado utilizando as flags: -Wall -Wextra -Werror usando cc
 
+Algumas perguntas devem surgir nesse momento, umas, eu consigo responder, outras eu vou desenvolver linhas de racicínio que precisão de referências, cujas quais estarão no final desse "sub-capítulo", ou "sub-tópico."
+
+Bom, vamos lá:
+
+#### O que é "cc"?
+
+A resposta mais simples é: Um **_Compilador._** Mas ela, obviamente, não nos diz muito... Para conseguirmos avançar, é preciso dizer, brevemente, que no processo de formação lidamos primariamente com uma linguagem de programação antiga (não a mais antiga, nem a primeira, nem "não mais utilizada") chamada C.
+
+C é uma Linguagem Compilada, o que significa que, para conseguirmos executar um programa em C precisamos passar pelo **_Processo de Compilação..._**
+
+Vamos fechar o raciocínio: Para executar um programa em C, eu preciso compilar meu código... Compilar é, então, transformar o código que eu escrevo (código-fonte, a fonte do que está sendo transformado) em algo diferente.
+
+Computadores só entendem 0s e 1s. Pelo fato de só conseguirmos expressar coisas em dois dígitos, nós dizemos que computadores só entendem _Binário_ (binary digit - binary).
+
+Então, Compilação é transformar código-fonte em um binário que pode ser executado. Um Compilador, por sua vez, é um programa que consegue, foi escrito, exatamente com esse propósito.
+
+#### Incrível, mas isso não explica o que cc é
+
+Sim, de fato, não explica. CC, ou "C Compiler", costuma ser uma forma genérica de nos referirmos ao Compilador Nativo de um Sistema Operacional, comum em Sistemas Operacionais Baseados em UNIX (o GNU/Linux, ou macOS).
+
+No final das contas, seu Terminal (a tela preta que você usa para escrever seus códigos, manipular arquivos e dificultar a própria vida) tem um "link simbólico", tipo específico de arquivo que é um **_ponteiro,_ uma referência**, para um outro arquivo ou diretório, para um Compilador nativo, que é determinado pela implementação do seu sistema... A gente consegue confirmar isso da seguinte forma:
+
+```shell
+ls -l /usr/bin/cc
+# isso permite que listemos o link simbólico em /usr/bin/cc.
+# você deve ver algo parecido com isso:
+lrwxrwxrwx 1 root root 20 Jun 20 22:10 /usr/bin/cc -> /etc/alternatives/cc
+# que basicamente quer dizer que /usr/bin/cc "aponta" p/ /etc/alternatives/cc
+ls -l /etc/alternatives/cc
+# vai, provavelmente, te mostrar algo parecido com isso:
+lrwxrwxrwx 1 root root 12 Jun 20 22:10 /etc/alternatives/cc -> /usr/bin/gcc
+# parabéns, seu Terminal traduz cc p/ gcc.
+```
+
+#### Caramba, e o que isso significa?
+
+Não muita coisa, a não ser que você identifique alguma particularidade entre os Compiladores mais comuns (clang e gcc) que seja importante ser levada em consideração, mas é importante saber o que se está fazendo.
+
+Não é interessante tentar trocar o Compilador Nativo, então eu não vou explorar essa possibilidade. Para saber a versão do gcc ou clang da sua máquina você pode digitar: `<compiler> --version` a Flag `--version` permite que verifiquemos a versão de um programa, normalmente.
+
+#### Sobre -Wall, -Wextra, -Werror
+
+O que essas flags fazem é, basicamente, "Endurecer", "Hardening" de fato, o processo de Compilação... Vamos desenvolver um pouco mais o que significa Compilar um código:
+
+O Compilador precisa fazer o processamento do seu código, isso é feito "de cima para baixo", por isso nós fazemos algumas coisas antes de escrevermos nosso código, e o que isso significa é que:
+
+1. O compilador entende de maneira gramatical se seu código está escrito de maneira que "faça sentido em C.
+
+Então, há um jeito certo de escrever C... isso deveria ser pressuposto, já que **_Linguagens de Programação são Linguagens Formais utilizadas na prova de Problemas Computacionais._**
+
+Além disso:
+
+2. O compilador consegue inferir error semânticos, erros de sentido de construção frasal.
+
+A primeira é básica: O que você escreve tem que fazer sentido em uma Linguagem, agora a segunda é **variável.** E é nesse ponto que as Flags e o conceito de Hardening entram:
+
+> *The objective of compiler options hardening is to produce application binaries (executables) with security mechanisms against potential attacks and/or misbehavior. — OpenSSF*
+
+C é uma linguagem bastante aberta, bem livre, bem Punk Rock... Isso causa problemas, alguns deles envolvem a relação expansiva que a linguagem tem com o manejo de memória de maneira direta: Espera-se que você saiba, minimamente, o que está fazendo. E isso é péssimo, porque **somos, todos, meio burros.**
+
+A solução para isso é relativamente simples: Hardening significa condicionar seu código à verificações especificamente desenvolvidas para conseguir detectar erros "simbólicos", na construção das suas frases, nas linhas de raciocínio que seu código gera.
+
+Pense que com Hardening nós temos um Professor de Redação muito rigoroso do nosso lado analisando basicamente qualquer declaração que fizermos:
+
+- Por que essa variável foi declarada, mas nunca inicializada?
+- Você precisa apagar essa variável se não for usar...
+
+Nós temos outros vários programas que fazem coisas parecidas, e eu os introduzirei a medida que a necessidade for surgindo... Mas basta dizer isso, inicialmente.
+
+Agora, usamos o `-Werror` justamente porque assim tornamos **qualquer aviso que as outras flags nos dêem em um erro de compilação, porque eles simbolizam falhas lógicas/de implementação na construção do nosso código.**
+
+**Referências:**
+[CPP/C++ Compiler Flags and Options - caiorss](https://caiorss.github.io/C-Cpp-Notes/compiler-flags-options.html): Sobre Flags e Compilação.
+[Compiler Options Hardening Guide for C and C++ - Open Source Security Foundation (OpenSSF)](https://best.openssf.org/Compiler-Hardening-Guides/Compiler-Options-Hardening-Guide-for-C-and-C++.html): Sobre Compilação, o que Hardening no contexto de Compilação Significa... E algumas coisas que eu não lembro agora.
