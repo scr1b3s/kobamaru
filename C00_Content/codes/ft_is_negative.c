@@ -6,23 +6,13 @@
 /*   By: k-maru <scribearm@gmail.com>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/09 22:24:18 by k-maru            #+#    #+#             */
-/*   Updated: 2024/09/09 22:24:22 by k-maru           ###   ########.fr       */
+/*   Updated: 2024/09/29 19:00:09 by k-maru           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
 void	ft_is_negative(int n);
-
-int	main(void)
-{
-	int	i = -1;
-	
-	while (++i != 10)
-		ft_is_negative(val);
-
-	return (0);
-}
 
 void	ft_is_negative(int n)
 {

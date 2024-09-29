@@ -6,7 +6,7 @@
 /*   By: k-maru <scribearm@gmail.com>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/09 22:26:49 by k-maru            #+#    #+#             */
-/*   Updated: 2024/09/09 22:37:21 by k-maru           ###   ########.fr       */
+/*   Updated: 2024/09/29 19:02:21 by k-maru           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,6 @@
 
 void	ft_putnbr(int nb);
 void	ft_putchar(char c);
-
-/*
-int	main(void)
-{
-	ft_putnbr(2147483647);
-	ft_putchar('\n');
-}
-*/
 
 void	ft_putnbr(int nb)
 {
