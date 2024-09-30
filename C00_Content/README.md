@@ -120,7 +120,7 @@ Enfim, tudo em memória é representado em bytes... Programas dão significado a
 
 Só pra esclarecer: o acesso à uma seção de memória que não esteja necessariamente mapeada com memória física é um dos motivos de recebermos um SEGV (Segmentation Violation).
 
-Expandindo um pouco nossa ideia, quando um Prgrama é "gerado" ele cataloga/organiza os dados nele dispostos em **Seções da Memória**, algumas delas são:
+Expandindo um pouco nossa ideia, quando um Programa é "gerado" ele cataloga/organiza os dados nele dispostos em **Seções da Memória**, algumas delas são:
 
 - **Text:** As intruções do programa, o código em si.
 - **ROData:** Read-Only Data, ou seja: Constantes e Literais (como Strings).
