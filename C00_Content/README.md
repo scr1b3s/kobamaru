@@ -144,4 +144,5 @@ Mas, se nós ao invés disso, fizermos:
 ## Referências
 
 - **_[Introduction to Systems Programming](https://www.cs.purdue.edu/homes/grr/SystemsProgrammingBook/)_** — Gustavo A. Junipero: Sobre programas, memória, pré-processamento e algumas outras coisas.
+- **_[The C Programming Language](https://www.amazon.com/Programming-Language-2nd-Brian-Kernighan/dp/0131103628)_** — Brian Kernighan & Dennis Ritchie: Pra tudo, essa é a Bíblia de C.
 - **_[CS50, Week 01, C](https://cs50.harvard.edu/x/2024/weeks/1/)_** — Harvard & David Malan: Para alguns conceitos específicos.
