@@ -86,17 +86,19 @@ Funções e Programas são quase a mesma coisa. Tudo bem, eles "claramente" **n�
 
 Beleza. Muita coisa.
 
-1. Conhecimento Declarativo é um conhecimento expresso em uma declaração. Ou seja: _"Para trocar uma lâmpada, você deve pegar uma escada, abrí-la, subir na escada, desatarrachar a lâmpada queimada e substituí-la por uma nova"._
+- Conhecimento Declarativo é um conhecimento expresso em uma declaração. Ou seja: _"Para trocar uma lâmpada, você deve pegar uma escada, abrí-la, subir na escada, desatarrachar a lâmpada queimada e substituí-la por uma nova"._
 
 Eu estou declarando como algo deve ser feito, algo que eu sei fazer. Isso, é Conhecimento Declarativo.
 
-2. De forma Imperativa implica que algo está sendo descrito na forma de Ordens, ou seja: _"1. Pegue a Lâmpada. 2. Pegue a Escada..."._
+- De forma Imperativa implica que algo está sendo descrito na forma de Ordens, ou seja: _"1. Pegue a Lâmpada. 2. Pegue a Escada..."._
 
 Ou seja: Estou dando ordens em formas de sentenças para que alguém faça alguma coisa que eu... muito importante: **SEI FAZER.**
 
-3. Sucessão de Passos Lógicos para a Realização de uma Tarefa é, exatamente, o que um Algoritmo é.
+- Sucessão de Passos Lógicos para a Realização de uma Tarefa pressupõe que uma tarefa, aquilo que queremos alcançar, tem algo como um Início, um Meio, e um Fim específico: O cumprimento dos requisitos para a transformação de algo, em outra coisa.
 
-Com esses três pontos nós definimos o que um Algoritmo é.
+Com esses três pontos nós definimos o que um Algoritmo é:
+
+> _Um algoritmo é uma sucessão lógica de tarefas descrita de forma a realizar algo, é a manifestação de Conhecimento em Forma Imperativa. É, normalmente, escrito em uma Linguagem Formal conhecida como Linguagem de Programação._
 
 O bônus é dizer que ele deve ser expresso em uma Linguagem Formal, que nesse caso é a Linguagem de Programação que desejamos utilizar para solucionar um problema.
 
