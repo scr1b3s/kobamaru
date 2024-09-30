@@ -112,23 +112,21 @@ Aí a gente pode se perguntar: Quais são essas **_informações necessárias?_*
 
 ### Das Informações, e Estrutura de Memória
 
-Beleza, agora vamos falar sobre algumas coisas bem interessantes que você pode ter ouvido falar antes, mas que são muito importantes e deverão ser pelo menos entendidas (não precisa compreender ainda, tem diferença)...
+Beleza, agora vamos falar sobre algumas coisas bem interessantes que você pode ter ouvido falar antes, mas que são muito importantes e deverão ser pelo menos entendidas (não precisa compreender ainda, tem diferença): Sabemos que computadores só entendem 1s e 0s, e isso se chama Binário. Importante: 1 byte é composto por 8 bits, ou seja: Em um byte temos 8 binary digits...
 
-Sabemos que computadores só entendem 1s e 0s, e isso se chama Binário. Importante: 1 byte é composto por 8 bits, ou seja: Em um byte temos 8 binary digits...
+O programa não sabe "exatamente onde" está. Logo, pro programa a memória é só isso: Um grande filete gigantesco de endereços que vai de "zero" até o hoizonte incrível com o por do Sol no fundo. Isso é o que chamamos de **_Espaço de Endereçamento, ou Address Space._**
 
-O programa não sabe "exatamente onde" está. Logo, pro programa a memória é só isso: Um grande filete de memória gigantesco. Isso é o que chamamos de **_Espaço de Endereçamento, ou Address Space._**
-
-Enfim, tudo em memória é representado em bytes... Programas dão significado a esse conjunto louco de espaços. E é por isso que os escrevemos.
+Enfim, tudo em memória é representado em bytes... Programas dão significado a esse conjunto louco de espaços utilizando recursos como **Tipos de Dados,** que nada mais são que conjuntos arbitrários (às vezes por motivos de implementação e arquitetura de um sistema) de bytes... Os Tipos permitem que tragamos significado aos endereços e conjuntos de endereço. É por isso que escrevemos Programas: Para conseguir realizar manipulação de Informação armazenada/gerada em um ambiente virtualmente infinito de possibilidades.
 
 Só pra esclarecer: o acesso à uma seção de memória que não esteja necessariamente mapeada com memória física é um dos motivos de recebermos um SEGV (Segmentation Violation).
 
-As informações, por sua vez, dizem respeito a muitas coisas, mas uma delas são as Seções de Memória do Programa, e "onde" cada coisa fica:
+Expandindo um pouco nossa ideia, quando um Prgrama é "gerado" ele cataloga/organiza os dados nele dispostos em **Seções da Memória**, algumas delas são:
 
 - **Text:** As intruções do programa, o código em si.
 - **ROData:** Read-Only Data, ou seja: Constantes e Literais (como Strings).
 - **Data:** Onde Variáveis Globais Inicializadas ficam.
 - **BSS:** Onde Variáveis Globais Não-Inicializadas estão, seu valor é automaticamente definido p/ zero.
-- **Heap:** Memória ocupada pela execução de malloc (Memory Allocation) ou new, no caso de C++.
+- **Heap:** Memória ocupada pela execução de malloc (Memory Allocation) ou new, no caso de C++. **Cresce p/ Cima.**
 - **Stack:** Variáveis Locais e Retornos de Função. **Cresce p/ Baixo.**
 
 Mas por que isso é importante? Porque assim nós conseguimos ter uma visão mais clara de como o programa "enxerga" sua estrutura de organização de recursos. O Espaço de Endereçamento é próprio de cada processo executado na máquina, logo a alteração dele é própria: Um processo não altera dados no Espaço de Endereçamento de outro.
