@@ -135,7 +135,9 @@ Mas por que isso é importante? Porque assim nós conseguimos ter uma visão mai
 
 ### Mas e o tal do Programa?
 
-# NOTE: I've stopped here.
+Desenvolvendo um pouco o entedimento: O programa é, justamente, isso: um arquivo especial contendo as informações necessárias à sua execução. O arquivo de um programa vai conter, então: As instruções dadas ao Computador, na seção de TEXT; os Dados Inicializados, ou seja: Variáveis e Constantes que estarão alocadas em DATA e RODATA; A relação de Bibliotecas Compartilhadas que o programa precisa p/ executar...
+
+Além de seções inicializadas em Zero, até terem valores alocados lá, ou seja: BSS, HEAP, STACK... tudo isso que deve ser organizado antes da lista de Símbolos Definidos e Indefinidos, que são suas variáveis e nomes de função que terão significado após o processo de Linkagem/Ligação.
 
 O processo de compilação é um "fluxo" multifacetado de vários passos cujo primeiro deles é o Pré-Processamento. Quando a gente digita esse tal gcc -Wall -Wextra -Werror, o processo todo é feito de uma vez só, cuspindo o "a.out" no final.
 
