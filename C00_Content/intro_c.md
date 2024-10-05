@@ -1,11 +1,17 @@
 #  C00: Estrutura Básica de uma Função e de um Programa
 
 ## Tabela de Conteúdos
-[Introdução](#introdução)
-[O que são Algoritmos](#funções-e-programas---algoritmos-e-coisas-no-meio)
-[Destrinchando a Função](#destrinchando-essas-porqueiras)
-[Tipos de Dados](#aprofundamento---tipos-de-dados)
-[Funções e Programas](#aprofundamento---a-função-e-um-programa)
+- [C00: Estrutura Básica de uma Função e de um Programa](#c00-estrutura-básica-de-uma-função-e-de-um-programa)
+  - [Tabela de Conteúdos](#tabela-de-conteúdos)
+  - [Introdução](#introdução)
+  - [Funções e Programas - Algoritmos e Coisas no Meio](#funções-e-programas---algoritmos-e-coisas-no-meio)
+  - [Destrinchando essas Porqueiras](#destrinchando-essas-porqueiras)
+  - [Aprofundamento - Tipos de Dados](#aprofundamento---tipos-de-dados)
+    - [Mas esse "void" não foi citado](#mas-esse-void-não-foi-citado)
+  - [Aprofundamento - A Função, e um Programa](#aprofundamento---a-função-e-um-programa)
+    - [E essa tal Tabela ASCII?](#e-essa-tal-tabela-ascii)
+    - [Mas e o Programa?](#mas-e-o-programa)
+    - [Função Main](#função-main)
 
 ## Introdução
 
