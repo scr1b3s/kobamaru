@@ -1,5 +1,14 @@
 #  C00: Estrutura Básica de uma Função e de um Programa
 
+## Tabela de Conteúdos
+[Introdução](#introdução)
+[O que são Algoritmos](#funções-e-programas---algoritmos-e-coisas-no-meio)
+[Destrinchando a Função](#destrinchando-essas-porqueiras)
+[Tipos de Dados](#aprofundamento---tipos-de-dados)
+[Funções e Programas](#aprofundamento---a-função-e-um-programa)
+
+## Introdução
+
 Dois caras muito inteligentes disseram uma vez que a única forma de se aprender uma linguagem de programação é escrevendo nela, e o primeiro **programa** costuma ser o mesmo para todas as linguagens... Eles falavam do _"Hello World"._
 
 Na École 42 nosso "Hello World" tem uma letra apenas, e se chama **ft_putchar**:
@@ -139,8 +148,8 @@ E esse tal **void** do lado de **ft_putchar**? Include, e esse tal ft_putchar, a
 De cima pra baixo, e da esquerda para a direita, temos:
 
 1. **a especificação do retorno da Função**, essa é a declaração do protótipo de uma função: Funções às vezes retornam alguma coisa, também possuem efeitos colaterais (como é o caso da que estamos falando sobre).
-2. seu Nome, ou seja, sua rotulagem: ft_putchar, ou seja: Forty-Two, Put Char. 42 Bota Caractere, literalmente.
-3. seu (ou seus) Argumento, que nesse caso é "c", de caractere.
+2. seu Nome, ou seja, sua rotulagem: ft_putchar, ou seja: **Forty-Two Put Char, ou 42 Bota Caractere**.
+3. seu (ou seus) Argumento(s), que nesse caso é "c", de caractere.
 
 Utilizamos uma Função que "importamos", a write, e não temos o uso de uma palavra reservada chamada return porque utilizamos *void.*
 
@@ -171,4 +180,100 @@ A representação negativa de um número é seu complemento, ou seja, enquanto `
 
 O escopo de valores que um Tipo pode representar, portanto, vai ser justamente 2 elevado pelo seu número em bits, se `unsigned` e sem a possibilidade de representarmos números negativos, e `seu número em bits - 1` se `signed`.
 
-Falamos de `int` e `char`, que são respectivamente 4, e 1. Mas também temos os tipos 
+Falamos de `int` e `char`, que são respectivamente 4, e 1 bytes. Mas também temos o tipo `float` que corresponde aos números de ponto flutuante, infelizmente por motivos que podem ser até que compreensíveis se pensarmos um pouco sobre, eles não trazem a precisão que esperaríamos justamente por ter o mesmo tamanho que int, porém reservar metade dos seus bits p/ o ponto flutuante.
+
+E... esses são basicamente os principais tipos que usaremos, ao menos como Estudantes da 42, com o modificador implícito sendo `signed`, sempre (ou melhor na maior parte do tempo).
+
+### Mas esse "void" não foi citado
+
+O tipo `void` é especial no sentido de que ele não tem um tamanho definido, ele é o que chamamos um "tipo s/ tamanho" justamente por representar apenas um blob, um dado bruto (apesar de geralmente usarmos BLOB p/ nos referirmos a dados multimídia, o termo se encaixa aqui).
+
+Isso é importante porque vamos entender melhor isso mais pra frente, porém, aqui basta dizer: A função retorna `void` porque ela não retorna nada, nós utilizamos apenas os efeitos colaterais do chamamento de `write`: Imprimir um caractere na tela.
+
+## Aprofundamento - A Função, e um Programa
+
+Voltemos ao início, nossa Função recebe:
+
+> - *um File Descriptor, representado por um Número Inteiro.*
+> - *um Ponteiro Nulo chamado "Buf".*
+> - *e uma Contagem, representado por um número, size_t (não me pergunte o que é isso ainda), chamado "Count".*
+
+Nós temos, inicialmente (não se preocupe com isso), 3 FDs: 0, 1 e 2 de um total possível de até 1024 (que não é necessariamente verdade p/ as Arquiteturas Modernas de Sistemas UNIX e pode ser conferida dinamicamente com o comando `ulimit -n`... mas vamos manter essa fantasia).
+
+- 0: *stdin,* **standard input,** ou entrada padrão.
+- 1: *stdout,* **standard output,** ou saída padrão (shell onde o programa foi executado).
+- 2: *stderr,* **standard error,** ou saída de erro padrão (normalmente também o shell onde o programa foi executado).
+
+Beleza, então para escrevermos um caractere na saída padrão, o Terminal, precisamos passar como primeiro argumento p/ a função `write` o número 1.
+
+Depois, a gente passa um **Ponteiro Nulo,** chamado *Buf*... A questão aqui é que o Ponteiro Nulo (*void \**) é justamente o indicativo de que nos referiamos a um espaço de memória (por isso usamos & antes de c, porque esse operador utilizado antes de uma variável indica que estamos lidando com o endereço dela).
+
+Ou seja, nós passamos o endereço de um buffer, que é nada mais que um espaço pré-definido de memória. Neste caso nosso buffer é uma variável/argumento do tipo `char`... E existe aqui uma questão muito importante:
+
+Estamos escrevendo/imprimindo os dados na Saída Padrão seguindo algo conhecido como **Tabela ASCII.**
+
+### E essa tal Tabela ASCII?
+
+Basicamente, a Tabela ASCII comprime (converte) os valores numéricos de 0 a 127, por um motivo claro: 2^7, ou seja: é um `signed char`, mas o mais legal: Apenas os números positivos de `signed char`.
+
+A Tabela ASCII Extendida utiliza um `unsigned char`, indo de 0 até 255, ou 2^8 números (256).
+
+Dito isso, por fim, o *Count* diz respeito a quantos bytes (importante) nós vamos "imprimir", como estamos imprimindo um byte apenas, nós passamos 1 novamente.
+
+Parabéns, você acabou de entender, superficialmente, como a função `ft_putchar` funciona.
+
+### Mas e o Programa?
+
+Vamos lá:
+
+```c
+#include <unistd.h>
+
+void    ft_putchar(char c);
+
+int     main(void)
+{       
+        char    *s;
+
+        s = "Hello World\n";
+        while (*s)
+                ft_putchar(*(s++));
+
+        return (0);
+}
+
+void    ft_putchar(char c)
+{
+        write(1, &c, 1);
+}
+```
+
+Se nós voltarmos às Instruções, elas dizem bem claramente que *"Nós só vamos pedir uma função main se um programa te for pedido"* parafrase minha... Então pra entendermos um programa de maneira inicial precisamos compreender o lugar da Função Main no contexto de Execução do Programa, certo?
+
+O exemplo do "Hello World" é legal porque o objetivo é, em primeiro momento, bem simples, mas ele também guarda um problema de ordem de conhecimento bastante interessante:
+
+Pra executar um programa, você precisa saber como as coisas funcionam, mesmo que superficialmente. Você precisa saber que a Linguagem que você utiliza é Compilada, quais programas você utiliza p/ compilar... como executar o processo de compilação...
+
+Todas coisas muito chatas, que você precisa, mesmo que intuitivamente, saber.
+
+Mas não é algo muito complexo, digamos que você queira fazer uma compilação simples:
+
+```bash
+# o nome do programa em questão será exemplo.c:
+make exemplo
+# o programa make vai procurar, neste diretório, algo que contenha "exemplo", e vai executar a seguinte linha:
+cc      exemplo.c       -o      exemplo
+# isso vai gerar o binário exemplo, p/ executá-lo:
+./exemplo
+Hello World
+```
+
+Pronto, você compilou seu primeiro programa em C. Obviamente a compilação não foi feita c/ os parâmetros de Hardening necessários à um programa/código de um Cadete, mas *"Existem muitos como ele, mas esse é meu."*
+
+### Função Main
+
+É comum dizermos que um programa começa sua execução, **depende**, na Função Main, que tem, como toda Função, seus parâmetros... Que nós vamos ver melhor mais a frente. Ou seja: ela é o ponto de entrada de um programa, não é o inicial, mas é um dos.
+
+É, portanto, seguro dizer que... todo programa, em C, precisa/depende de uma Função Main.
+
+Você deve ter reparado algo interessante no nosso programa: `while` que pode ser traduzido p/ `enquanto` aparece pela primeira vez... E esse, além de alguns outros, é nosso próximo assunto.
