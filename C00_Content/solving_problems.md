@@ -11,14 +11,14 @@ write(1, "abcdefghijklmnopqrstuvwxyz", 26);
 O resultado vai ser exatamente o mesmo de se escrever algo como o que vimos antes:
 
 ```c
-	char	c;
+char	c;
 
-	c = 'a';
-	while (c <= 'z')
-	{
-		write(1, &c, 1);
-		c++;
-	}
+c = 'a';
+while (c <= 'z')
+{
+    write(1, &c, 1);
+    c++;
+}
 ```
 
 Mas no final das contas, um resultado é a **materialização do aprendizado a partir da manifestação de uma solução robusta.** É a aplicação daquilo que foi aprendido. Conhecimento. Existem claras diferenças que no final das contas vão dizer muito sobre o que você sabe e sua noção de solução possível, das fronteiras do seu Conhecimento e de como você consegue aplicá-lo na Resolução de um Problema.
