@@ -1,6 +1,6 @@
 # C00: As Muitas Formas de Se Solucionar um Problema
 
-Eu resolvi escrever esse breve preâmbulo por um motivo muito simples: **Problemas não têm jeito certo de serem solucionados, eles só têm como serem... O importante é a solução.** Óbvio, esse é um debate bastante amplo cuja exaustão não será dada em uma postagem simples em um Arquivo Markdown escrito por um Babaca do GitHub, isso é posto.
+Eu resolvi escrever esse breve preâmbulo por um motivo muito simples: **Problemas não têm jeito certo de serem solucionados. O importante é a solução.** Óbvio, esse é um debate bastante amplo cuja exaustão não será dada em uma postagem simples em um Arquivo Markdown escrito por um Babaca do GitHub, isso é posto.
 
 Porém, é bem possível de se dizer que: **Assim como nem todo problema/exercício é criado igual, nem toda solução é.** O que isso significa é bem simples: Se eu te digo para imprimir todas as letras do alfabeto na tela você **pode** escrever da seguinte forma:
 
