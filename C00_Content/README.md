@@ -26,3 +26,4 @@ Aproveitando o momento p/ conseguir transmitir as proposições que esse conteú
   - [Das Informações, e Estrutura de Memória](/C00_Content/prog_struct.md#das-informações-e-estrutura-de-memória)
   - [Mas e o tal do Programa?](/C00_Content/prog_struct.md#mas-e-o-tal-do-programa)
   - [Referências](/C00_Content/prog_struct.md#referências)
+- [C00: As Muitas Formas de Se Solucionar um Problema](/C00_Content/solving_problems.md)
