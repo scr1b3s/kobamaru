@@ -101,3 +101,8 @@ Escolhi utilizar 3 variáveis, todas do tipo `int`, uma é o nosso retorno, o n�
 1. Pensemos no argumento "palavra":
    1. Vamos percorrê-lo de maneira consistente, já que uma vez identificando a letra "p", `in` será dada por 1, e vamos atualizando nossa posição até o fim da palavra.
 2. Agora, se o argumento for " ", ou seja: **nada, vazio:**
+   1. O valor de `in` de fato será `0`, mas nunca entraremos na condição `!in` porque ela depende de não termos entrado na primeira condição: `s[i] == ' '`, ou seja: nossa letra não ser um espaço.
+
+Com essa função e programa ainda conseguimos introduzir alguns outros conceitos... como por exemplo: `else if`, que é uma peça-chave p/ condicionais mais interessantes e multi-facetadas: `else if` será executado apenas como condição adicional de `if`, uma segunda, terceira... verificação.
+
+`Else if` não é executado se `if` tiver.
