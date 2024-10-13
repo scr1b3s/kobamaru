@@ -110,7 +110,7 @@ DATA:           &a      = 0x0x55d76ce6d010.
 BSS:            &b[0]   = 0x0x55d76ce6d040.
 RO-DATA:        hello   = 0x0x55d76ce6d018.
 STACK:          &c      = 0x0x7ffc307b5edc.
-HEAP:           p      = 0x0x55d76e7a42a0.
+HEAP:           p       = 0x0x55d76e7a42a0.
 TEXT:           main    = 0x0x55d76ce6a1a9.
 ```
 
