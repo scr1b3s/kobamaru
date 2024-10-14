@@ -26,7 +26,7 @@ Aproveitando o momento p/ conseguir transmitir as proposições que esse conteú
 - [C00: Condicionais, ou E Se?](/C00_Content/conditionals.md)
   - [Existem outros operadores de comparação?](/C00_Content/conditionals.md#existem-outros-operadores-de-comparação)
   - [Beleza, você consegue aplicar esses dois conceitos?](/C00_Content/conditionals.md#beleza-você-consegue-aplicar-esses-dois-conceitos)
-  - [A Count_Words](/C00_Content/conditionals.md#a-count_words)
+  - [A count_words](/C00_Content/conditionals.md#a-count_words)
 - [C00: O que é um Programa?](/C00_Content/prog_struct.md)
   - [Das Informações, e Estrutura de Memória](/C00_Content/prog_struct.md#das-informações-e-estrutura-de-memória)
   - [Da Violação de Segmento](/C00_Content/prog_struct.md#da-violação-de-segmento)
