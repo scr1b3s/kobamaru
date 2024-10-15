@@ -16,10 +16,10 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v3
 
-      - name: Install Criterion
-        run: |
-          sudo apt-get update
-          sudo apt-get install -y build-essential cmake libcriterion-dev
+      # - name: Install Criterion
+      #   run: |
+      #     sudo apt-get update
+      #     sudo apt-get install -y build-essential cmake libcriterion-dev
       
       - name: Clones Critenette
         run: |
@@ -32,7 +32,7 @@ jobs:
 
       - name: Foda-se
         run: |
-          ls -la
+          ls ..
           pwd
 
       # - name: Moves .c Files
