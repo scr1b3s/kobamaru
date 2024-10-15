@@ -28,7 +28,7 @@ jobs:
 
       - name: Moves .c Files
         run: |
-          ../test_c/copy_c_files.sh kobamaru ..test_c/src 
+          ../test_c/copy_c_files.sh . ..test_c/src 
 
       - name: Build
         run: make
