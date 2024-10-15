@@ -12,20 +12,19 @@
 
 #include <unistd.h>
 
-void    ft_putchar(char c);
+void	ft_putchar(char c);
 
-int     main(void)
-{       
-        char    *s;
+int	main(void)
+{
+	char	*s;
 
-        s = "Hello World\n";
-        while (*s)
-                ft_putchar(*(s++));
-
-        return (0);
+	s = "Hello World\n";
+	while (*s)
+		ft_putchar(*(s++));
+	return (0);
 }
 
-void    ft_putchar(char c)
+void	ft_putchar(char c)
 {
-        write(1, &c, 1);
+	write(1, &c, 1);
 }

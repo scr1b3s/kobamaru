@@ -16,22 +16,23 @@ int	count_words(char *s);
 
 int	main(int ac, char *av[])
 {
-	int	count = 0;
+	int	count;
 
+	count = 0;
 	if (ac == 2)
 	{
 		count = count_words(av[1]);
 		printf("%d.", count);
 	}
 	printf("\n");
-
 	return (0);
 }
 
 int	count_words(char *s)
 {
-	int	words = 0, i = 0, in = 0;
+	int	words = 0, i = 0, in;
 
+	words = 0, i = 0, in = 0;
 	i = 0;
 	while (s[i])
 	{
@@ -44,6 +45,5 @@ int	count_words(char *s)
 		}
 		i++;
 	}
-
 	return (words);
 }

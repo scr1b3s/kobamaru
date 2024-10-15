@@ -16,8 +16,9 @@ void	ft_print_alphabet(void);
 
 void	ft_print_alphabet(void)
 {
-	char	c = 'a' - 1;
-	
+	char	c;
+
+	c = 'a' - 1;
 	while (++c <= 'z')
 		write(1, &c, 1);
 }
