@@ -28,11 +28,13 @@ jobs:
 
       - name: Moves .c Files
         run: |
-          ../test_c/copy_c_files.sh ../kobamaru ..test_c/src
+          ls -la
+          ../test_c/copy_c_files.sh ../kobamaru src
 
       - name: Build
         run: |
           cd ../test_c/
+          ls -la
           make
 
       # # Step 4: Run Criterion tests
