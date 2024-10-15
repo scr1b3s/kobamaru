@@ -14,10 +14,10 @@
 #include <stdlib.h>
 #include <string.h>
 
-int			a = 5;                            /* var. global INICIALIZADA,
-				fica em DATA. */
-int b[20];                           
-	/* var. global NÃO-INICIALIZADA,vai p/ BSS */
+int			a = 5; /* var. global INICIALIZADA,
+fica em DATA. */
+int			b[20];
+/* var. global NÃO-INICIALIZADA,vai p/ BSS */
 const char	*hello = "Hello World!\n"; /* const. str. vai p/ RO-DATA. */
 
 int	main(void) /* vai p/ TEXT: texto do programa. */

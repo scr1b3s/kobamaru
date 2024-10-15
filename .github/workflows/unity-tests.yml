@@ -1,4 +1,4 @@
-name: Unity Test Workflow
+name: Criterion Test Worflow
 
 on:
   push:
@@ -20,10 +20,19 @@ jobs:
         run: |
           sudo apt-get update
           sudo apt-get install -y build-essential cmake libcriterion-dev
+      
+      - name: Clones Critenette
+        run: |
+          git clone https://github.com/scr1b3s/test_c.git
+          mv test_c ..
+
+      - name: Moves .c Files
+        run: |
+          ../test_c/copy_c_files.sh kobamaru ..test_c/src 
 
       - name: Build
         run: make
 
       # Step 4: Run Criterion tests
-      - name: Run tests
-        run: ./tests/tests_bin 
+      - name: Run ft_putchar tests
+        run: ./tests/test_ft_putchar 
