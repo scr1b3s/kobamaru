@@ -26,9 +26,9 @@ jobs:
           git clone https://github.com/scr1b3s/test_c.git
           mv test_c ..
 
-      - name: Move aí
-        run: |
-          cd ..
+      # - name: Move aí
+      #   run: |
+      #     cd ../..
 
       - name: Foda-se
         run: |
