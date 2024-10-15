@@ -30,11 +30,13 @@ int	main(int ac, char *av[])
 
 int	count_words(char *s)
 {
-	int	words = 0, i;
+	int	words;
+	int	i;
+	int	in;
 
-	words = 0, i = 0, in;
-	words = 0, i = 0, in = 0;
+	words = 0;
 	i = 0;
+	in = 0;
 	while (s[i])
 	{
 		if (s[i] == ' ')
