@@ -30,8 +30,9 @@ int	main(int ac, char *av[])
 
 int	count_words(char *s)
 {
-	int	words = 0, i = 0, in;
+	int	words = 0, i;
 
+	words = 0, i = 0, in;
 	words = 0, i = 0, in = 0;
 	i = 0;
 	while (s[i])
