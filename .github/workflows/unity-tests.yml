@@ -29,7 +29,7 @@ jobs:
       - name: Moves .c Files
         run: |
           ls -la
-          ../test_c/copy_c_files.sh "../kobamaru" "src"
+          ../test_c/copy_c_files.sh "../kobamaru" "../test_c/src"
 
       - name: Build
         run: |
