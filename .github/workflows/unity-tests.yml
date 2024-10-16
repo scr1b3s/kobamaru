@@ -38,4 +38,5 @@ jobs:
 
       # # Step 4: Run Criterion tests
       - name: Run ft_putchar tests
-        run: ./tests/test_ft_putchar 
+        run: |
+          ../test_c/tests/test_ft_putchar 
