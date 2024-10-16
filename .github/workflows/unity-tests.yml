@@ -29,7 +29,7 @@ jobs:
       - name: Moves .c Files
         run: |
           ls -la
-          ../test_c/copy_c_files.sh ../kobamaru src
+          ../test_c/copy_c_files.sh "../kobamaru" "src"
 
       - name: Build
         run: |
@@ -37,7 +37,7 @@ jobs:
           ls -la
           make
 
-          
+
       # # Step 4: Run Criterion tests
       # - name: Run ft_putchar tests
       #   run: ./tests/test_ft_putchar 
